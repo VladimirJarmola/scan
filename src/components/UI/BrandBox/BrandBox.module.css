@@ -1,0 +1,18 @@
+.brandBox {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 308px;
+    height: 65px;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 31px;
+    border: 1px solid #5970FF82;
+    border-radius: 3px;
+}

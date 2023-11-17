@@ -1,0 +1,112 @@
+.formDesktop {
+    width: 429px;
+    height: 523px;
+    margin-left: 50px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.btnGrp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 379px;
+    height: 29px;
+    padding: 20px;
+}
+
+.btnGrp .authBtn {
+    background: transparent;
+    border-style: none none solid none;
+    border-width: 2px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    line-height: 20px;
+    width: 151px;
+    border-color: #029491;
+    color: #029491;
+}
+
+
+.btnGrp .authBtn:disabled {
+    width: 213px;
+    border-color: #C7C7C7;
+    color: #C7C7C7;
+}
+
+.inputGrp {
+    display: flex;
+    flex-direction: column;
+    margin: 0 25px 0 25px;
+}
+
+.inputGrp span {
+    font-size: 16px;
+    padding: 25px 25px 10px 0;
+    color: #C7C7C7;
+}
+
+.inputValid {
+    height: 43px;
+    border-radius: 5px;
+    border-color: #C7C7C7;
+    border-style: solid;
+    padding-left: 20px;
+}
+
+.inputInValid {
+    height: 43px;
+    border-radius: 5px;
+    border-color: red;
+    border-style: solid;
+    padding-left: 20px;
+}
+
+.errorLgn {
+    position: absolute;
+    align-self: center;
+    padding-top: 105px;
+    color: red;
+    z-index: -1;
+}
+
+.errorPwd {
+    position: absolute;
+    align-self: center;
+    padding-top: 200px;
+    color: red;
+    z-index: -2;
+}
+
+.inputGrp .restorePwd {
+    font-size: 14px;
+    color: #5970FF;
+    padding: 20px 40px;
+    align-self: center;
+}
+
+.inputGrp .entry {
+    display: flex;
+    flex-direction: column;
+    color: #949494;
+}
+
+.comeInBtn {
+    margin-top: 30px;
+    height: 59px;
+    width: 379px;
+    align-self: center;
+    padding: 16px 40px;
+    color: white;
+    font-size: 20px;
+    background-color: #5970FF;
+    border-radius: 5px;
+    border: 1px solid #5970FF;  
+    cursor: pointer;
+}
+
+.comeInBtn:disabled {
+    border-color: #99a5ff;
+    background: #99a5ff;
+}

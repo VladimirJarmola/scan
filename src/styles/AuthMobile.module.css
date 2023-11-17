@@ -1,0 +1,29 @@
+.authConteiner {
+    display: flex;
+    flex-direction: column;
+    padding-left: 14px;
+    padding-top: 31px;
+}
+
+.content {
+    font-family: 'Ferry', Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 900;
+}
+
+.auth {
+    width: 335px;
+    height: 585px;
+    padding-top: 45px;
+}
+
+.lockStl {
+    position: absolute;
+    padding-left: 80px;
+}
+
+.pictStl {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}

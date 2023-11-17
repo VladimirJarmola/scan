@@ -1,0 +1,34 @@
+.searchHead {
+    font-family: 'Ferry', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 48px;
+    width: 817px;
+    padding-left: 60px;
+}
+
+.content {
+    padding-left: 60px;
+    padding-top: 20px;
+    width: 534px;
+    font-size: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wrapper div:nth-of-type(2) {
+    position: absolute;
+    padding-left: 938px;
+    margin-top: -50px;
+    
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: row;
+}
+
+

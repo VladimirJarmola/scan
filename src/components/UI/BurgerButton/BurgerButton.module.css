@@ -1,0 +1,32 @@
+.menuButton {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .menuButton:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    background: #029491;
+    height: 5px;
+  }
+  
+  .menuButton:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    background: #029491;
+    height: 5px;
+  }
+  
+  .menuButtonSpan {
+    position: absolute;
+    top: 10px;
+    width: 30px;
+    background: #029491;
+    height: 5px;
+  }

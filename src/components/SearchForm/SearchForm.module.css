@@ -1,0 +1,221 @@
+.inputBoxForm {
+    display: flex;
+    width: 872px;
+    height: 543px;
+    margin: 30px 60px 80px 60px;
+    justify-content: space-between;
+    padding-top: 20px;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.inputGrp {
+    padding-left: 40px;
+}
+
+.inputItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.inputValid {
+    border: 1px solid #C7C7C7;
+    border-radius: 5px;
+    width: 242px;
+    height: 43px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.inputInValid {
+    border: 1px solid red;
+    border-radius: 5px;
+    width: 242px;
+    height: 43px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.error {
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    padding-left: 28px;
+    padding-top: 8px;
+    color: red;
+    z-index: -1;
+}
+
+.tonality {
+    border: 1px solid #C7C7C7;
+    border-radius: 5px;
+    width: 262px;
+    height: 43px;
+    margin-top: 20px;
+}
+
+.inputDate {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.wrapperInputDate {
+    display: flex;
+    flex-direction: row;
+}
+
+.inputDateFieldValid {
+    border: 1px solid #C7C7C7;
+    border-radius: 5px;
+    width: 176px;
+    height: 43px;
+    margin-top: 20px;
+    margin: 20px 20px 0 0;
+    padding-left: 15px;
+}
+
+.inputDateFieldInValid {
+    border: 1px solid red;
+    border-radius: 5px;
+    width: 176px;
+    height: 43px;
+    margin-top: 20px;
+    margin: 20px 20px 0 0;
+    padding-left: 15px;
+}
+
+::-webkit-input-placeholder {
+    text-align:center;
+    }
+
+.inputBox div:last-child {
+    margin-bottom: 80px;
+} 
+
+.chkbxGrp {
+    padding-top: 20px;
+    padding-right: 15px;
+}
+
+.chkbx {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.chkbx_disabled {
+    color:#949494;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.chkbx_input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: solid 1px black;
+}
+
+.chkbx:hover .chkbx_input ~ .checkmark {
+    background-color: #e6e6e6;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.chkbx .chkbx_input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.chkbx .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid rgb(47, 161, 81);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.chkbx input:checked + label {
+    color: #000000;
+}
+
+.chkbx label {
+    margin: 10px;
+}
+
+.chkbx .chkbx_input:disabled ~ .checkmark {
+    border: solid 1px rgb(217, 216, 216);
+}
+
+.chkbx:hover .chkbx_input:disabled ~ .checkmark {
+    background-color: transparent;
+  }
+
+.chkbx .chkbx_input:disabled ~ .checkmark {
+    cursor: auto;
+}
+
+.btnGrp {
+    display: flex;
+    flex-direction: column;
+    padding-top: 110px;
+    padding-left: 50px;
+}
+
+.btnGrp .btn {
+    background: #5970FF;
+    border: 1px solid #5970FF;
+    border-radius: 5px;
+    color: white;
+    font-size: 22px;
+    width: 305px;
+    height: 59px;
+    cursor: pointer;
+}
+
+.btnGrp .btn:disabled {
+    border-color: #99a5ff;
+    background: #99a5ff;
+    cursor: auto;
+}
+
+.btnGrp span {
+    font-size: 14px;
+    color: #949494;
+    padding-top: 10px;
+}

@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.info {
+    text-align: right;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.logoutBtn {
+    font-size: 10px;
+    font-weight: 400; 
+    background: transparent;
+    border-style: none;
+    cursor: pointer;
+}

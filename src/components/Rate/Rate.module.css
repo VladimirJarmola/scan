@@ -1,0 +1,79 @@
+.rateBox {
+  width: 415px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.rateBox .header {
+  background-color: #FFB64F;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 132px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 30px;
+}
+
+.rateBox .header p {
+  font-size: 30px;
+  line-height: 36px;
+  padding-top: 30px; 
+}
+
+.rateBox .header img {
+  padding: 10px;
+}
+
+.rateBox .header .text span {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.rateBox .card {  
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 408px;
+}
+  
+.card .price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.card .price p:first-child {
+  font-size: 30px;
+  padding-left: 30px;
+}
+
+.card .price p:last-child {
+  font-size: 25px;
+  padding-left: 30px;
+  opacity: 50%;
+  align-self: center;
+}
+
+.card .priceDescription {
+  padding: 20px 10px 20px 30px;
+  font-size: 18px;
+}
+
+.card .description {
+  padding-left: 30px;
+  font-size: 18px;
+}
+
+.card .description p {
+  font-size: 20px;
+}
+
+.card .description div:first-of-type {
+  padding-top: 10px;
+}
+
+.card .accountButton {
+  text-align: center;
+  margin-top: 70px;
+}

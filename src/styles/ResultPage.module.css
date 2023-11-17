@@ -1,0 +1,73 @@
+.intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 100px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.title p {
+    font-family: 'Ferry', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 48px;
+    width: 490px;
+}
+
+.title span {
+    padding-top: 30px;
+}
+
+.generalSummery {
+    padding-left: 60px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    height: 260px;
+}
+
+.generalSummery p {
+    font-family: 'Ferry', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.generalSummery span {
+    color: #949494;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.docList {
+    padding-left: 60px;
+    padding-top: 80px;
+}
+
+.docList p {
+    font-family: 'Ferry', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 110px;
+}
+
+.btn {
+    background: #5970FF;
+    border: 1px solid #5970FF;
+    border-radius: 5px;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    width: 305px;
+    height: 59px;
+    cursor: pointer;
+}

@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.loadWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+}
+
+.loader {
+    height: 200px;
+    transform: scale(2);
+}
+
+.mobileWrapper {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around;
+    flex-wrap: wrap; */
+    padding-top: 34px;
+    padding-bottom: 36px;
+}

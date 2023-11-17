@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import  { CURRENT_DATE_STRFORMAT, EXPIRE_DATE } from './constants/CONSTANTS';
+
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
+import AppRouter from './components/AppRouter/AppRouter';
+import { addAuthAction } from './store/authReducer';
+import { addScreenSizeAction } from './store/screenReducer';
+
+import './styles/App.css';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
+  const windowInnerWidth = document.documentElement.clientWidth;
+  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(addScreenSizeAction(windowInnerWidth));
+    if(localStorage.getItem('accessToken') && CURRENT_DATE_STRFORMAT < EXPIRE_DATE ) {
+      dispatch(addAuthAction(true))
+    }
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <AppRouter />   
+      </BrowserRouter>
+      <Footer />  
     </div>
   );
 }

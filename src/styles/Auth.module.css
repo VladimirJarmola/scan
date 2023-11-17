@@ -1,0 +1,32 @@
+.authConteiner {
+    display: flex;
+    flex-direction: row;
+    padding-left: 60px;
+    padding-bottom: 100px;
+}
+  
+.authConteiner .content {
+    width: 817px;
+}
+  
+.authConteiner .content p {
+    font-family: 'Ferry', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 48px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    height: 144px;
+}
+  
+.authConteiner .content img {
+    padding-left: 120px;
+}
+  
+.authConteiner .auth {
+    width: 480px;
+    height: 578px;
+}
+  
+.authConteiner .auth img {
+    position: absolute;
+}

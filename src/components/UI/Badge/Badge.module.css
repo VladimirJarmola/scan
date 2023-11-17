@@ -1,0 +1,15 @@
+.badgeConteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 45px;
+}
+  
+.badge {
+    margin: 10px;
+    padding: 4px 20px;
+    color: white;
+    background: #3BA5E0;
+    border-radius: 10px;
+    font-size: 14px;
+}

@@ -1,0 +1,16 @@
+.myBtn {
+  height: 59px;
+  align-self: self-start;
+  color: white;
+  background-color: #5970FF;
+  border-radius: 5px;
+  border: 1px solid #5970FF;  
+  cursor: pointer;
+  }
+
+  .myBtn:disabled {
+    background-color: #D2D2D2;
+    border-color: #D2D2D2;
+    color: black;
+    cursor: auto;
+  }

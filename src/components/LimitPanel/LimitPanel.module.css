@@ -1,0 +1,30 @@
+.user_limit_wrapper {
+    font-size: 10px;
+    text-align: right;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fontMobile {
+    font-size: 8px;
+}
+  
+.user_limit_wrapper_use span:nth-child(even) {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.user_limit_wrapper_limit span:nth-child(even) {
+    font-size: 14px;
+    color: #8AC540;
+    font-weight: 700;
+}
+
+.loader_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+

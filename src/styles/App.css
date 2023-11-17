@@ -1,0 +1,44 @@
+@font-face {
+  src: url('../assets/fonts/Inter-Regular.ttf');
+  font-family: 'Inter';            
+}
+
+@font-face {
+  src: url('../assets/fonts/Ferry-Black.ttf');
+  font-family: 'Ferry';            
+}
+
+html {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  max-width: 1440px;
+  /* width: 100%; */
+  /* max-width: 100%; */
+  /* overflow-x: hidden; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+#root {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.App {
+  width: 100%;
+  /* max-width: 100%;
+  overflow-x: hidden; */
+}
+
+.body {
+  height: 100%;
+}
+
+
+
+
+
