@@ -18,8 +18,9 @@ const ResultSlider = ({resultSliderData, isLoading}) => {
                 if (lengthSlider > array.length) {
                     element.settings.slidesToShow = array.length - index;
                 } else {
-                    if (lengthSlider - index > 0) {
-                        element.settings.slidesToShow = lengthSlider - 1;
+                    if (lengthSlider - index > 1) {
+                        element.settings.slidesToShow = lengthSlider - index - 2;
+                        console.log(element.settings.slidesToShow)
                     } else {
                         element.settings.slidesToShow = 1 
                     }
@@ -32,7 +33,7 @@ const ResultSlider = ({resultSliderData, isLoading}) => {
             })
         }
     }, [lengthSlider])
-
+    
     return (
         <div className='resultSlider' >
             <div className='header'>
