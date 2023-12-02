@@ -13,15 +13,14 @@ import ResultSlider from '../components/ResultSlider/ResultSlider';
 import PublicCardList from '../components/PublicCardList/PublicCardList';
 
 import classes from '../styles/ResultPage.module.css';
-import mobileClasses from '../styles/ResultPageMobile.module.css';
 
 import resultPict1 from '../assets/image/result_pict_1.svg';
 
 const ResultPage = () => {
-    const screenSize = useSelector(state => state.screenSize.screenSize);
-    const mobileLimit = useSelector(state => state.screenSize.mobileLimit);
     // управление загрузкой в слайдере
     const [isLoading, setIsLoading] = useState(true);
+    // Был ли запрос, для обработки пустыхо ответов
+    const [wasRequest, setWasRequest] = useState(false);
     // полученный объект по запросу /api/v1/objectsearch/histograms
     const [histograms, setHistograms] = useState({});
     // общее кол-во документов в запросе /api/v1/objectsearch/histograms
@@ -33,7 +32,7 @@ const ResultPage = () => {
     //количество отображаемых публикаций
     const [numberOfPages, setNumberOfPages] = useState(10);
     // выключатель кнопки
-    const [buttonVisibility, setButtonVisibility] = useState(true);
+    const [buttonVisibility, setButtonVisibility] = useState(false);
     // ответ по запросу /api/v1/documents
     const [scanDocObj, setScanDocObj] = useState([]);
 
@@ -44,20 +43,22 @@ const ResultPage = () => {
 
     if (!requestBody) {
         history.push('/search');
-    } else if (Object.keys(histograms).length === 0) {
+    } else if (Object.keys(histograms).length === 0 && !wasRequest) {
         getHistograms();
         getObjectsID();
-    } else if (Object.keys(histograms).length !== 0 && total === 0) {
+    } else if (Object.keys(histograms).length !== 0 && total === 0 && !wasRequest) {
         setTotal(sumFunc(histograms.totalDocuments));
         setResultSliderData(resultSliderDataFanc(histograms));
-        setIsLoading(false);        
+        setIsLoading(false);   
+        setWasRequest(true);     
     } 
-
+    
     useEffect(() => {
+        
         if (IdArray.length !== 0 ) {
-            if (IdArray.length <= numberOfPages) {
-                setButtonVisibility(false)
-            }
+            if (IdArray.length > numberOfPages) {
+                setButtonVisibility(true)
+            } else {setButtonVisibility(false)}
             const partOfEncodedIdList = IdArray.slice(numberOfPages - 10, numberOfPages);
             getScanDocList(partOfEncodedIdList);
         } 
@@ -88,90 +89,51 @@ const ResultPage = () => {
         setScanDocObj(scanDocObj.concat(scanDocRequest));
     }
 
-    const getNextPages = () => {
+    const getNextPagesHandler = () => {
         if (IdArray.length > numberOfPages) {
             setNumberOfPages(numberOfPages + 10)
         }         
     }
 
-    if (screenSize > mobileLimit) {
-        return (
-            <div className='body'>
-                <div className={classes.intro}>
-                    <div className={classes.title}>
-                        <p>Ищем. Скоро будут результаты</p>
-                        <span>Поиск может занять некоторое время, <br/>
-                            просим сохранять терпение.</span>
-                    </div>
-                    <div className={classes.image}>
-                        <img src={resultPict1} alt={resultPict1} /> 
-                    </div>            
+    return (
+        <div className='body'>
+
+            <div className={classes.intro}>
+                <div className={classes.title}>
+                    <p>Ищем. Скоро будут результаты</p>
+                    <span>Поиск может занять некоторое время, <br/>
+                        просим сохранять терпение.</span>
                 </div>
-    
-                <div className={classes.generalSummery}>
-                    <p>Общая сводка</p>
-                    <span>Найдено {total} вариантов </span>
-                    <ResultSlider isLoading={isLoading} resultSliderData={resultSliderData} />
-                </div>
-                 
-                <div className={classes.docList}>
-                    <p>список документов</p>
-                    <PublicCardList scanDocObj={scanDocObj}/> 
-                </div>
-                <div className={classes.btnWrapper}>
-                    {
-                        buttonVisibility
-                            ?
-                        <button className={classes.btn} onClick={getNextPages}>
-                            Показать больше
-                        </button>
-                            :
-                        <div></div>
-                    }
-                    
-                </div>
+                <div className={classes.image}>
+                    <img src={resultPict1} alt={resultPict1} /> 
+                </div>            
             </div>
-        )
-    } else {
-        return (
-            <div className='body'>
-                <div className={mobileClasses.intro}>
-                    <div className={mobileClasses.title}>
-                        <p>Ищем. Скоро будут результаты</p>
-                        <span>Поиск может занять некоторое время, <br/>
-                            просим сохранять терпение.</span>
-                    </div>
-                    <div className={mobileClasses.image}>
-                        <img src={resultPict1} alt={resultPict1} /> 
-                    </div>            
-                </div>
-    
-                <div className={mobileClasses.generalSummery}>
-                    <p>Общая сводка</p>
-                    <span>Найдено {total} вариантов </span>
-                    <ResultSlider isLoading={isLoading} resultSliderData={resultSliderData} />
-                </div>
-                 
-                <div className={mobileClasses.docList}>
-                    <p>список документов</p>
-                    <PublicCardList scanDocObj={scanDocObj}/> 
-                </div>
-                <div className={mobileClasses.btnWrapper}>
-                    {
-                        buttonVisibility
-                            ?
-                        <button className={mobileClasses.btn} onClick={getNextPages}>
-                            Показать больше
-                        </button>
-                            :
-                        <div></div>
-                    }
-                    
-                </div>
+
+            <div className={classes.generalSummery}>
+                <p>Общая сводка</p>
+                <span>Найдено {total} вариантов </span>
+                <ResultSlider isLoading={isLoading} resultSliderData={resultSliderData} />
             </div>
-        )
-    }
-    
+                
+            <div className={classes.docList}>
+                <p>список документов</p>
+                <PublicCardList scanDocObj={scanDocObj}/> 
+            </div>
+            
+            <div className={classes.btnWrapper}>
+                {
+                    buttonVisibility
+                        ?
+                    <button className={classes.btn} onClick={getNextPagesHandler}>
+                        Показать больше
+                    </button>
+                        :
+                    <div></div>
+                }
+                
+            </div>
+        </div>
+    )    
 }
 
 export default ResultPage;

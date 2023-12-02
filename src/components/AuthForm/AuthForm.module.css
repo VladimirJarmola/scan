@@ -1,4 +1,4 @@
-.formDesktop {
+.formWrapper {
     width: 429px;
     height: 523px;
     margin-left: 50px;
@@ -109,4 +109,49 @@
 .comeInBtn:disabled {
     border-color: #99a5ff;
     background: #99a5ff;
+}
+
+@media screen and (max-width: 800px) {
+    .formWrapper {
+        width: 335px;
+        height: 504px;
+        margin-left: 14px;
+        margin-top: 80px;
+    }
+    .btnGrp {
+        padding: 25px 15px;
+        height: 29px;
+        width: auto;
+    }
+    .btnGrp .authBtn {
+        padding-bottom: 10px;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        width: 103px;        
+    }
+    .btnGrp .authBtn:disabled {
+        width: 182px;
+    }
+    .inputGrp {
+        margin: 0 15px 0 15px;
+    }
+    .inputGrp span {
+        font-size: 14px;
+        padding: 20px 0 10px 0;
+    }
+    .comeInBtn {
+        margin-top: 35px;
+        height: 59px;
+        width: 305px;
+    }
+    .inputGrp .entry span {
+        padding-top: 5px;
+    }
+    .errorLgn {
+        padding-top: 97px;
+    }
+    .errorPwd {
+        padding-top: 192px;
+    }
 }

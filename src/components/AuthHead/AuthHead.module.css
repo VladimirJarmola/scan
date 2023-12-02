@@ -30,26 +30,27 @@
     color: black;
 }
 
-.authMobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 800px) {
+    .auth {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .authBtn {
+        color: rgb(122, 187, 161);
+    }
+    
+    .btn {
+        margin-top: 20px;
+        width: 295px;
+        height: 52px;
+        border-radius: 5px;
+        border: 1px solid #7CE3E1; 
+        background: #7CE3E1;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+    }
 }
-
-.authBtnMobile {
-    color: rgb(122, 187, 161);
-}
-
-.btnMobile {
-    margin-top: 20px;
-    width: 295px;
-    height: 52px;
-    border-radius: 5px;
-    border: 1px solid #7CE3E1; 
-    background: #7CE3E1;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-}
-

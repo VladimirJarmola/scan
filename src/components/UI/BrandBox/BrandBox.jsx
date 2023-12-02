@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {BRAND} from '../../../constants/BRAND';
+import { BRAND } from '../../../constants/BRAND';
 
 import classes from './BrandBox.module.css';
 

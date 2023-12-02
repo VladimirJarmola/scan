@@ -6,13 +6,13 @@
   margin: 0 -5px;
 }
 
-.mainSliderMobile .slick-arrow {
-  margin-left: 5px;
-  margin-right: 40px;
+@media screen and (max-width: 800px) {
+  .mainSlider .slick-arrow {
+    margin-left: 5px;
+    margin-right: 40px;
+  }
+  .mainSlider .slick-list {
+    padding: 0 15px;
+    margin: 0 0px;
+  }
 }
-
-.mainSliderMobile .slick-list {
-  padding: 0 15px;
-  margin: 0 0px;
-}
-

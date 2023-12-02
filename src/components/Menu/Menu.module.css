@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 240px;
+    min-width: 240px;
 }
 
 .linkMobile {
@@ -61,7 +61,7 @@
     position: relative;
     cursor: pointer;
     transform: rotate(45deg);
-    padding-right: 28px;
+    padding-right: 60px;
 }
 
 .vertLine {

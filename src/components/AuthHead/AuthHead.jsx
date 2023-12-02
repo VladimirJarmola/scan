@@ -6,9 +6,7 @@ import { addAuthAction } from "../../store/authReducer";
 
 import classes from './AuthHead.module.css';
 
-const AuthHead = ({setActive}) => {
-    const screenSize = useSelector(state => state.screenSize.screenSize);
-    const mobileLimit = useSelector(state => state.screenSize.mobileLimit);
+const AuthHead = ({setActive, isMobile}) => {
     const isAuth = useSelector(state => state.auth.auth);
     const dispatch = useDispatch();
   
@@ -19,7 +17,7 @@ const AuthHead = ({setActive}) => {
       setActive(false);
     }
     
-    if (screenSize > mobileLimit) {
+    if (!isMobile) {
         return (
             <div className={classes.auth}>
                 <div className={classes.authBtn}>
@@ -34,18 +32,18 @@ const AuthHead = ({setActive}) => {
         )
     } else {
         return (
-            <div className={classes.authMobile}>
-                <div className={classes.authBtnMobile}>
+            <div className={classes.auth}>
+                <div className={classes.authBtn}>
                     <span>Зарегистрироваться</span>
                 </div>
                 {
                     isAuth
                         ?
-                        <button className={classes.btnMobile} onClick={logout}>
+                        <button className={classes.btn} onClick={logout}>
                             Выйти
                         </button>
                         :
-                        <button className={classes.btnMobile} onClick={() => setActive(false)}>
+                        <button className={classes.btn} onClick={() => setActive(false)}>
                             <Link to="/auth" className={classes.link}>Войти</Link>
                         </button>
                 }

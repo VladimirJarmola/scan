@@ -20,11 +20,13 @@
     transform: scale(2);
 }
 
-.mobileWrapper {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-around;
-    flex-wrap: wrap; */
-    padding-top: 34px;
-    padding-bottom: 36px;
+@media screen and (max-width: 800px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 34px;
+        padding-bottom: 36px;
+    }
 }

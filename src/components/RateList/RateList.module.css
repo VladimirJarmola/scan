@@ -1,6 +1,11 @@
 .ratesList {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  @media screen and (max-width: 1400px) {
+    .ratesList {
+      flex-direction: column;
+    }
   }

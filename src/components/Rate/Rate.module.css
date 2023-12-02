@@ -2,6 +2,7 @@
   width: 415px;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  margin-top: 20px;
 }
 
 .rateBox .header {
@@ -24,11 +25,14 @@
 
 .rateBox .header img {
   padding: 10px;
+  height: 83px;
+  width: 92px;
 }
 
-.rateBox .header .text span {
+.rateBox .header span {
   font-size: 16px;
   line-height: 22px;
+  margin-bottom: 34px;
 }
 
 .rateBox .card {  
@@ -76,4 +80,56 @@
 .card .accountButton {
   text-align: center;
   margin-top: 70px;
+}
+
+@media screen and (max-width: 800px) {
+  .rateBox {
+    min-width: 335px;
+    max-width: 335px;
+    margin-bottom: 43px;
+    margin-left: 14px;
+  }
+  .rateBox .header {
+    flex-flow: row wrap;
+    padding-left: 30px;
+  }
+  .rateBox .header p {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  .rateBox .header img {
+    height: 53px;
+    width: 59px;
+    position: absolute;
+    padding-left: 235px;
+  }
+  .rateBox .card {  
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .rateBox .card {  
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .badgeWrapper {
+    display: none;
+  }
+  .card .price {
+    margin-top: 20px;
+  }
+  .card .description {
+    font-size: 16px;
+  }
+  .card .description p {
+    font-size: 18px;
+  }
+  .card .accountButton {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 }

@@ -1,7 +1,10 @@
 function sumFunc(array) {
     let result = 0;
-    for (let i = 0; i < array.length; i++)
-        result += array[i].value;
+    if (array.length !== 0) {
+        for (let i = 0; i < array.length; i++)
+            result += array[i].value;
+    }
+    
     return result
 }
 
@@ -17,9 +20,12 @@ function resultSliderDataFanc(obj) {
 
 function createIdArray(obj) {
     let resultArray = [];
-    obj.forEach(element => {
-        resultArray.push(element.encodedId)
-    })
+    if (Object.keys(obj).length !== 0) {
+        obj.forEach(element => {
+            resultArray.push(element.encodedId)
+        })
+    }
+    
     return resultArray
 }
 

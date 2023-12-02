@@ -11,12 +11,9 @@ import Logo from '../UI/Logo/Logo';
 import BurgerButton from '../UI/BurgerButton/BurgerButton';
 
 import classes from './Header.module.css';
-import mobileClasses from './HeaderMobile.module.css';
 
 const Header = () => {
   const isAuth = useSelector(state => state.auth.auth);
-  const screenSize = useSelector(state => state.screenSize.screenSize);
-  const mobileLimit = useSelector(state => state.screenSize.mobileLimit);
   const [menuActive, setMenuActive] = useState(false);
 
   const navItems = [
@@ -24,16 +21,20 @@ const Header = () => {
     {value: 'Тарифы', href: '/'},
     {value: 'FAQ', href: '/'},
   ]
-
-  if (screenSize > mobileLimit) {
     return (
       <div className={classes.header}>
         <div className={classes.logo}>
           <Logo/>
         </div>
-        
-        <Menu navItems={navItems} />
 
+        <div className={classes.menu}>
+          <Menu navItems={navItems} isMobile={false}/>
+        </div>
+
+        <div className={classes.burgerMenu}>
+          <Menu isMobile={true} navItems={navItems} active={menuActive} setActive={setMenuActive} />
+        </div>
+        
         {isAuth 
           ? 
           <div className={classes.user}>
@@ -45,34 +46,18 @@ const Header = () => {
             </div>
           </div>
           :
-          <AuthHead />
+          <div className={classes.authHead}>
+            <AuthHead isMobile={false}/>
+          </div>
         }
-      </div>
-    );
-  } else {
-    return (
-      <div className={mobileClasses.header} >
-        <div className={mobileClasses.logo}>
-          <Logo/>
-        </div>
-        {
-          isAuth
-            ?
-            <div className={mobileClasses.user_limit}>
-              <LimitPanel />
-            </div>
-            :
-            <div></div>
-        }
-        <div className={mobileClasses.burgerButton} onClick={() => setMenuActive(!menuActive)}>
+        
+        <div className={classes.burgerButton} onClick={() => setMenuActive(!menuActive)}>
           <BurgerButton />
         </div>
         
-        <Menu navItems={navItems} active={menuActive} setActive={setMenuActive} />
-        
       </div>
-    )
-  }
+    );
+
 };
 
 export default Header;

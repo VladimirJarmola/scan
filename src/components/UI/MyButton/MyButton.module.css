@@ -6,11 +6,21 @@
   border-radius: 5px;
   border: 1px solid #5970FF;  
   cursor: pointer;
-  }
+  width: 355px;
+  font-size: 20px;
+}
 
-  .myBtn:disabled {
-    background-color: #D2D2D2;
-    border-color: #D2D2D2;
-    color: black;
-    cursor: auto;
+.myBtn:disabled {
+  background-color: #D2D2D2;
+  border-color: #D2D2D2;
+  color: black;
+  cursor: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .myBtn{
+    width: 287px;
+    font-size: 18px;
   }
+  
+}

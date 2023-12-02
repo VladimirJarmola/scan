@@ -6,16 +6,41 @@
     justify-content: space-between;
 }
 
-.fontMobile {
-    font-size: 8px;
+.user_limit_wrapper_use {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.user_limit_wrapper_use p {
+    font-size: 10px;
 }
   
-.user_limit_wrapper_use span:nth-child(even) {
+.user_limit_wrapper_use span {
     font-size: 14px;
     font-weight: 700;
 }
 
-.user_limit_wrapper_limit span:nth-child(even) {
+.user_limit_wrapper_limit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+} 
+
+.user_limit_wrapper_limit p {
+    font-size: 10px;
+}
+
+.user_limit_wrapper_limit span {
     font-size: 14px;
     color: #8AC540;
     font-weight: 700;
@@ -26,5 +51,24 @@
     flex-direction: column;
     justify-content: center;
     align-self: center;
+}
+
+@media screen and (max-width: 800px) {
+    .user_limit_wrapper_use {
+        display: inline;
+        text-align: left;
+        padding-right: 0px;
+    }
+    .user_limit_wrapper_limit {
+        display: inline;
+        text-align: left;
+        padding-right: 0px;
+    }
+    .user_limit_wrapper_use p {
+        font-size: 8px;
+    }
+    .user_limit_wrapper_limit p {
+        font-size: 8px;
+    }
 }
 

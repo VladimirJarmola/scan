@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import Slider from "react-slick";
 
 import { settings } from '../../constants/ForResultSlider';
@@ -7,88 +6,63 @@ import { settings } from '../../constants/ForResultSlider';
 import Loader from '../UI/Loader/Loader';
 
 import './ResultSlider.css';
-import './ResultSliderMobile.css';
 
 const ResultSlider = ({resultSliderData, isLoading}) => {
-    const screenSize = useSelector(state => state.screenSize.screenSize);
-    const mobileLimit = useSelector(state => state.screenSize.mobileLimit);
 
     const lengthSlider = Object.keys(resultSliderData).length;
-    
+    console.log('lengthSlider', lengthSlider)
     useEffect(() => {
-        if (
-            settings.slidesToShow >= lengthSlider && 
-            lengthSlider !== 0
-            ) {
+        if (settings.slidesToShow >= lengthSlider && lengthSlider !== 0) {
             settings.slidesToShow = lengthSlider - 1;
+            settings.responsive.forEach((element, index, array) => {
+                if (lengthSlider > array.length) {
+                    element.settings.slidesToShow = array.length - index;
+                } else {
+                    if (lengthSlider - index > 0) {
+                        element.settings.slidesToShow = lengthSlider - 1;
+                    } else {
+                        element.settings.slidesToShow = 1 
+                    }
+                }              
+            })
         } else {
             settings.slidesToShow = 8;
+            settings.responsive.forEach((element, index, array) => {
+                element.settings.slidesToShow = array.length - index
+            })
         }
     }, [lengthSlider])
 
-    if (screenSize > mobileLimit) {
-        return (
-            <div className='resultSlider' >
-                <div className='header'>
-                    <div>Период</div>
-                    <div>Всего</div>
-                    <div>Риски</div>
-                </div>
-    
-                {isLoading 
-                    ?
-                    <div className='loadWrapper'>
-                        <div className='loader'>
-                            <Loader />
-                        </div>
-                        
-                        <div>Загружаем данные</div>
-                    </div>
-                    :
-                    <Slider {...settings}>
-                        {resultSliderData.map(slide =>
-                            <div key={slide.date}>
-                                <div>{slide.date}</div>
-                                <div>{slide.value}</div>
-                                <div>{slide.riskFactor}</div>
-                            </div>
-                        )}
-                    </Slider>
-                }
+    return (
+        <div className='resultSlider' >
+            <div className='header'>
+                <div>Период</div>
+                <div>Всего</div>
+                <div>Риски</div>
             </div>
-        )
-    } else {
-        return (
-            <div className='resultSliderMobile' >
-                <div className='headerMobile'>
-                    <div>Период</div>
-                    <div>Всего</div>
-                    <div>Риски</div>
-                </div>
-    
-                {isLoading 
-                    ?
-                    <div className='loadWrapperMobile'>
-                        <div className='loaderMobile'>
-                            <Loader />
-                        </div>
 
+            {isLoading || !lengthSlider
+                ?
+                <div className='loadWrapper'>
+                    <div className='loader'>
+                        <Loader />
                     </div>
-                    :
-                    <Slider {...settings}>
-                        {resultSliderData.map(slide =>
-                            <div key={slide.date} className='sliderItemMobile'>
-                                <div>{slide.date}</div>
-                                <div>{slide.value}</div>
-                                <div>{slide.riskFactor}</div>
-                            </div>
-                        )}
-                    </Slider>
-                }
-            </div>
-        )
-    }
-    
+                    
+                    <div>Загружаем данные</div>
+                </div>
+                :
+                <Slider {...settings}>
+                    {resultSliderData.map(slide =>
+                        <div key={slide.date} className='sliderItem'> 
+                            <div>{slide.date}</div>
+                            <div>{slide.value}</div>
+                            <div>{slide.riskFactor}</div>
+                        </div>
+                    )}
+                </Slider>
+            }
+        </div>
+    )
 }
 
 export default ResultSlider;

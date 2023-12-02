@@ -1,24 +1,14 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
-
 import picture from '../../../assets/image/logo.svg';
 
-const Logo = () => {
-    const screenSize = useSelector(state => state.screenSize.screenSize);
-    const mobileLimit = useSelector(state => state.screenSize.mobileLimit);
-    let size = {
-        width: 141,
-        height: 93,
-    }
+import classes from './Logo.module.css';
 
-    if (screenSize <= mobileLimit) {
-        size.width = 111
-    }
+const Logo = () => {
 
     return (
         <div>
-            <img src={picture} alt='логотип компании СКАН' width={size.width} height={size.height} />
+            <img src={picture} alt='логотип компании СКАН' className={classes.logo}/>
         </div>
     );
 };

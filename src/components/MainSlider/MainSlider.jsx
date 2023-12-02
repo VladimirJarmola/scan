@@ -10,11 +10,9 @@ import { sliderData, settings } from "../../constants/ForMainSlider";
 import './MainSlider.css';  
 
 function MainSlider() {
-  const screenSize = useSelector(state => state.screenSize.screenSize);
-  const mobileLimit = useSelector(state => state.screenSize.mobileLimit);
   
   return (
-    <div className={screenSize > mobileLimit ? 'mainSlider' : 'mainSliderMobile'} >
+    <div className='mainSlider' >
       <Slider {...settings}>
       
         {sliderData.concat(sliderData).map(slide => 

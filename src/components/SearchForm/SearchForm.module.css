@@ -1,10 +1,9 @@
 .inputBoxForm {
     display: flex;
-    width: 872px;
+    min-width: 872px;
     height: 543px;
     margin: 30px 60px 80px 60px;
     justify-content: space-between;
-    padding-top: 20px;
     font-size: 18px;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -18,7 +17,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 25px;
 }
 
 .inputValid {
@@ -40,11 +39,11 @@
 }
 
 .error {
+    position: absolute;
     font-size: 14px;
     font-weight: 400;
-    position: absolute;
-    padding-left: 28px;
-    padding-top: 8px;
+    padding-left: 5px;
+    padding-top: 5px;
     color: red;
     z-index: -1;
 }
@@ -97,7 +96,7 @@
 } 
 
 .chkbxGrp {
-    padding-top: 20px;
+    padding-top: 25px;
     padding-right: 15px;
 }
 
@@ -193,7 +192,7 @@
 .btnGrp {
     display: flex;
     flex-direction: column;
-    padding-top: 110px;
+    padding-top: 130px;
     padding-left: 50px;
 }
 
@@ -218,4 +217,95 @@
     font-size: 14px;
     color: #949494;
     padding-top: 10px;
+}
+
+.btnGrpMobile {
+    display: none
+}
+
+@media screen and (max-width: 1050px) {
+    .chkbxGrp {
+        display: none;
+    }
+    .inputBoxForm {
+        min-width: 375px;
+        height: 688px;
+        margin: 20px 0 25px 0;
+        justify-content: space-between;
+        margin-left: 60px;
+    }
+    .inputGrp {
+        padding-left: 14px;
+        padding-top: 5px;
+    }
+    .inputItem {
+        padding-top: 25px;
+    }
+    .inputValid {
+        width: 315px;
+        margin-top: 25px;
+    }
+    .inputInValid {
+        width: 315px;
+        margin-top: 25px;
+    }
+    .error {
+        font-size: 12px;
+        align-self: center;
+        padding-top: 6px;
+        padding-left: 0;
+    }
+    .tonality {
+        width: 335px;
+    }
+    .inputDate {
+        padding-top: 20px;
+    }
+    .wrapperInputDate {
+        flex-direction: column;
+    }
+    .inputDateFieldValid {
+        width: 315px;
+        margin-top: 20px;
+        margin: 20px 20px 0 0;
+        padding-left: 15px;
+    }
+    .inputDateFieldInValid {
+        width: 315px;
+        margin-top: 20px;
+        margin: 20px 20px 0 0;
+        padding-left: 15px;
+    }
+    .btnGrpMobile {
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+    }
+    .btnMobile {
+        background: #5970FF;
+        border: 1px solid #5970FF;
+        border-radius: 5px;
+        color: white;
+        height: 59px;
+        cursor: pointer;
+
+        font-size: 20px;
+        width: 335px;
+    }
+    .btnMobile:disabled {
+        border-color: #99a5ff;
+        background: #99a5ff;
+        cursor: auto;
+    }
+    .btnGrpMobile span {
+        font-size: 14px;
+        color: #949494;
+        padding-top: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .inputBoxForm {
+        margin-left: 14px;
+    }
 }

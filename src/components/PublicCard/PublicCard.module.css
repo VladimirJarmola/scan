@@ -27,13 +27,15 @@
     font-weight: 500;
 }
 
+.card .mobileImg {
+    display: none;
+}
+
 .content {
     padding-top: 20px;
     padding-right: 30px;
     padding-bottom: 32px;
     font-size: 16px;
-    font-weight: 400;
-    opacity: 50%;
 }
 
 .wrapper {
@@ -59,4 +61,55 @@
 .totalWords {
     color: #949494;
     padding-right: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        width: 335px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        padding-left: 0px;
+    }
+    .capCard {
+        padding-left: 24px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .sourceName {
+        padding-left: 9px;
+    }
+    .header {
+        padding: 21px 12px 0 24px;
+        font-size: 19px;
+    }
+    .card .desktopImg {
+        display: none;
+    }
+    .card .mobileImg {
+        display: block;
+        max-width: 297px;
+        height: 158px;
+        padding-left: 24px;
+    }
+    .content {
+        padding: 18px 21px 0 24px;
+        font-size: 12px;
+        font-weight: 400;
+        opacity: 50%;
+    }
+    .wrapper {
+        width: 320px;
+        bottom: 18px;
+        padding-left: 24px;
+    }
+    .urlButton {
+        width: 195px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .totalWords {
+        font-size: 14px;
+        font-weight: 400;
+        padding-left: 20px;
+    }
 }

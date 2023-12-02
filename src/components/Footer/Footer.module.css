@@ -1,33 +1,31 @@
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #029491;
-    height: 137px;
-    margin-bottom: -137px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #029491;
+  height: 137px;
+  margin-bottom: -137px;
+}
   
-  .logo {
-    padding-left: 60px;
-  }
+.logo {
+  padding-left: 60px;
+}
   
-  .cutaway {
-    color: #FFFFFF;
-    text-align: right;
-    padding-right: 45px;
-    font-size: 14px;
-  }
+.cutaway {
+  color: #FFFFFF;
+  text-align: right;
+  padding-right: 45px;
+  font-size: 14px;
+}
 
-  
-  .logoMobile {
+@media screen and (max-width: 800px) {
+  .logo {
     padding-left: 18px;
     align-self: flex-start;
     margin-top: -12px;
   }
-  
-  .cutawayMobile {
-    color: #FFFFFF;
-    text-align: right;
+    
+  .cutaway {
     padding-right: 19px;
-    font-size: 14px;
   }
+}

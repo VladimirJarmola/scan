@@ -13,7 +13,7 @@ const settings = {
     {
       breakpoint: 1400,
       settings: {
-        slidesToShow: 7,
+        slidesToShow: 6,
         slidesToScroll: 1,
         infinite: true,
         dots: false
@@ -22,7 +22,7 @@ const settings = {
     {
       breakpoint: 1250,
       settings: {
-        slidesToShow: 6,
+        slidesToShow: 5,
         slidesToScroll: 1,
         infinite: true,
         dots: false
@@ -31,7 +31,7 @@ const settings = {
     {
       breakpoint: 1100,
       settings: {
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
         infinite: true,
         dots: false
@@ -40,7 +40,7 @@ const settings = {
     {
       breakpoint: 950,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
         dots: false
@@ -49,7 +49,7 @@ const settings = {
     {
       breakpoint: 800,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         infinite: true,
         dots: false

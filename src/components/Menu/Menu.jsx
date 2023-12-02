@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 
 import WhiteLogo from "../UI/WhiteLogo/WhiteLogo";
@@ -8,11 +7,9 @@ import AuthHead from "../AuthHead/AuthHead";
 
 import classes from './Menu.module.css';
 
-const Menu = ({active, setActive, navItems}) => {
-    const screenSize = useSelector(state => state.screenSize.screenSize);
-    const mobileLimit = useSelector(state => state.screenSize.mobileLimit);
+const Menu = ({isMobile, active, setActive, navItems}) => {
     
-    if (screenSize > mobileLimit) {
+    if (!isMobile) {
         return (
             <div className={classes.navbar}>
                 {navItems.map(item => 
@@ -43,7 +40,7 @@ const Menu = ({active, setActive, navItems}) => {
                         )}
                     </div>
                     <div className={classes.authWrapperMobile} >
-                      <AuthHead setActive={setActive}/>
+                      <AuthHead setActive={setActive} isMobile={true}/>
                     </div>
                     
                 </div>

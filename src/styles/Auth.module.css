@@ -6,7 +6,9 @@
 }
   
 .authConteiner .content {
-    width: 817px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
   
 .authConteiner .content p {
@@ -20,6 +22,9 @@
   
 .authConteiner .content img {
     padding-left: 120px;
+    width: 322px;
+    height: 342px;
+    z-index: -1;
 }
   
 .authConteiner .auth {
@@ -29,4 +34,53 @@
   
 .authConteiner .auth img {
     position: absolute;
+}
+
+.pictStl {
+    display: none;
+}
+
+@media screen and (max-width: 1260px) {
+    .authConteiner .content p {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .authConteiner {
+        flex-direction: column;
+        padding-left: 14px;
+        padding-top: 31px;
+    }
+    .authConteiner .content {
+        margin-bottom: -80px;
+    }
+    .authConteiner .content p {
+        font-family: 'Ferry', Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: 900;
+    }
+    .authConteiner .content img {
+        display: none;
+    }
+    .auth {
+        width: 335px;
+        height: 585px;
+        padding-top: 45px;
+        
+    }
+    .lockStl {
+        position: absolute;
+        padding-left: 80px;
+    }
+    .pictStl {
+        display: block;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 80px;
+        width: 335px;
+        height: 356px;
+        overflow-x: hidden;
+    }
 }

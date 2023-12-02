@@ -10,7 +10,6 @@ import Footer from './components/Footer/Footer';
 
 import AppRouter from './components/AppRouter/AppRouter';
 import { addAuthAction } from './store/authReducer';
-import { addScreenSizeAction } from './store/screenReducer';
 
 import './styles/App.css';
 
@@ -18,12 +17,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function App() {
-  const windowInnerWidth = document.documentElement.clientWidth;
   
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(addScreenSizeAction(windowInnerWidth));
     if(localStorage.getItem('accessToken') && CURRENT_DATE_STRFORMAT < EXPIRE_DATE ) {
       dispatch(addAuthAction(true))
     }

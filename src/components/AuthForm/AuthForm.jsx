@@ -1,19 +1,17 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 import Services from '../../API/Services';
 import { addAuthAction } from "../../store/authReducer";
 
 import classes from './AuthForm.module.css';
-import mobileClasses from './AuthFormMobile.module.css';
 
 import BrandBox from "../UI/BrandBox/BrandBox";
 
 const AuthForm = () => {
-    const screenSize = useSelector(state => state.screenSize.screenSize);
-    const mobileLimit = useSelector(state => state.screenSize.mobileLimit);
+
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [loginEntry, setLoginEntry] = useState(false);
@@ -88,93 +86,49 @@ const AuthForm = () => {
         }
         
     }
-    if (screenSize > mobileLimit) {
-        return (
-            <form className={classes.formDesktop}>
-                <div className={classes.btnGrp}>
-                    <button className={classes.authBtn}>Войти</button>
-                    <button className={classes.authBtn} disabled={true}>Зарегистрироваться</button>
-                </div>
-                <div className={classes.inputGrp}>
-                    
-                    <span>Логин или номер телефона:</span>
-                    <input 
-                        className={loginStyle} 
-                        onChange={e => loginHandler(e)} 
-                        name='login' 
-                        onBlur={e => blurHandler(e)} 
-                        value={login}/>
-
-                    {(loginEntry && loginError) && <div className={classes.errorLgn}> {loginError}</div>}
-                    
-                    <span>Пароль:</span>
-                    <input 
-                        className={passwordStyle} 
-                        onChange={e => passwordHandler(e)} 
-                        name='password' 
-                        type="password" 
-                        onBlur={e => blurHandler(e)} 
-                        value={password}/>
-
-                    {(passwordEntry && passwordError) && <div className={classes.errorPwd}> {passwordError}</div>}
     
-                    <button onClick={auth} className={classes.comeInBtn} disabled={!formValid}>Войти</button>
-    
-                    <div className={classes.restorePwd}>
-                        <u>Восстановить пароль</u> 
-                    </div> 
-                    <div className={classes.entry}>
-                        <span>Войти через:</span>
-                        <BrandBox />
-                    </div>           
-                </div>                         
-            </form>
-        )
-    } else {
-        return (
-            <form className={mobileClasses.formMobile}>
+    return (
+        <form className={classes.formWrapper}>
+            <div className={classes.btnGrp}>
+                <button className={classes.authBtn}>Войти</button>
+                <button className={classes.authBtn} disabled={true}>Зарегистрироваться</button>
+            </div>
 
-                <div className={mobileClasses.btnGrp}>
-                    <button className={mobileClasses.authBtn}>Войти</button>
-                    <button className={mobileClasses.authBtn} disabled={true}>Зарегистрироваться</button>
-                </div>
+            <div className={classes.inputGrp}>
+                
+                <span>Логин или номер телефона:</span>
+                <input 
+                    className={loginStyle} 
+                    onChange={e => loginHandler(e)} 
+                    name='login' 
+                    onBlur={e => blurHandler(e)} 
+                    value={login}/>
 
-                <div className={mobileClasses.inputGrp}>
-                    
-                    <span>Логин или номер телефона:</span>
-                    <input 
-                        className={loginStyle} 
-                        onChange={e => loginHandler(e)} 
-                        name='login' 
-                        onBlur={e => blurHandler(e)} 
-                        value={login}/>
+                {(loginEntry && loginError) && <div className={classes.errorLgn}> {loginError}</div>}
+                
+                <span>Пароль:</span>
+                <input 
+                    className={passwordStyle} 
+                    onChange={e => passwordHandler(e)} 
+                    name='password' 
+                    type="password" 
+                    onBlur={e => blurHandler(e)} 
+                    value={password}/>
 
-                    {(loginEntry && loginError) && <div className={classes.errorLgn}> {loginError}</div>}
-                    
-                    <span>Пароль:</span>
-                    <input 
-                        className={passwordStyle} 
-                        onChange={e => passwordHandler(e)} 
-                        name='password' 
-                        type="password" 
-                        onBlur={e => blurHandler(e)} 
-                        value={password}/>
-                    {(passwordEntry && passwordError) && <div className={classes.errorPwd}> {passwordError}</div>}
-    
-                    <button onClick={auth} className={mobileClasses.comeInBtn} disabled={!formValid}>Войти</button>
-    
-                    <div className={mobileClasses.restorePwd}>
-                        <u>Восстановить пароль</u> 
-                    </div> 
-                    <div className={mobileClasses.entry}>
-                        <span>Войти через:</span>
-                        <BrandBox />
-                    </div>           
-                </div>                         
-            </form>
-        )
-    }
+                {(passwordEntry && passwordError) && <div className={classes.errorPwd}> {passwordError}</div>}
 
+                <button onClick={auth} className={classes.comeInBtn} disabled={!formValid}>Войти</button>
+
+                <div className={classes.restorePwd}>
+                    <u>Восстановить пароль</u> 
+                </div> 
+                <div className={classes.entry}>
+                    <span>Войти через:</span>
+                    <BrandBox />
+                </div>           
+            </div>                         
+        </form>
+    )
 };
 
 export default AuthForm;
